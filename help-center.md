@@ -1,21 +1,21 @@
-# Help Center & Support 🤝
+# Help Center & Support
 
 Welcome to the **Straight Forward Solid Systems** Help Center! We are dedicated to ensuring your integration experience with our Unreal Engine plugins is smooth and hassle-free.
 
----
+***
 
 ## 🔍 Step 1: Check the Troubleshooting Guides
 
 Before reaching out for support, we strongly encourage you to review the dedicated **Troubleshooting** page for your specific plugin:
 
-- 🌐 [SF Steam Online Sessions - Troubleshooting](sf-steam-online-sessions/troubleshooting.md)
-- 🎬 [SF Fades - Troubleshooting](sf-fades/troubleshooting.md)
-- ⏱️ [SF Timers - Troubleshooting](sf-timers/troubleshooting.md)
-- 🔔 [SF Toasts - Troubleshooting](sf-toasts/troubleshooting.md)
+* 🌐 [SF Steam Online Sessions - Troubleshooting](sf-steam-online-sessions/troubleshooting.md)
+* 🎬 [SF Fades - Troubleshooting](sf-fades/troubleshooting.md)
+* ⏱️ [SF Timers - Troubleshooting](sf-timers/troubleshooting.md)
+* 🔔 [SF Toasts - Troubleshooting](sf-toasts/troubleshooting.md)
 
 Most common engine configurations, setup details, and edge cases are answered in these guides.
 
----
+***
 
 ## 🛠️ Technical Support & Feature Suggestions
 
@@ -23,15 +23,16 @@ If you couldn't find a solution in the troubleshooting guide, discovered a bug, 
 
 📧 **Technical Support & Feedback:** [support@sfsolidsystems.com](mailto:support@sfsolidsystems.com)
 
-*When writing to support, please try to include:*
-- Your Unreal Engine version (e.g. 5.3, 5.4, 5.5).
-- Plugin name.
-- Steps to reproduce the issue (along with any relevant log output or screenshots).
+_When writing to support, please try to include:_
 
----
+* Your Unreal Engine version (e.g. 5.3, 5.4, 5.5).
+* Plugin name.
+* Steps to reproduce the issue (along with any relevant log output or screenshots).
+
+***
 
 ## 📬 Business & General Contacts
 
 For business inquiries, licensing questions, collaborations, or general contact:
 
-📧 **General Inquiries:** [sfsolidsystems@gmail.com](mailto:sfsolidsystems@gmail.com)
+📧 **General Inquiries:** [contact@sfsolidsystems.com](mailto:contact@sfsolidsystems.com)
