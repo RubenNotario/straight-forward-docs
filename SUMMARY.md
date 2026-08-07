@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Welcome](README.md)
+* [Help Center & Support](help-center.md)
 
 ## SF STEAM ONLINE SESSIONS
 * [Overview](sf-steam-online-sessions/overview.md)
