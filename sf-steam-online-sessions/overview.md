@@ -1,6 +1,6 @@
 # SF Steam Online Sessions - Overview
 
-**Straight Forward Steam Sessions** is a lightweight, production-ready, and unopinionated Unreal Engine plugin designed to wrap Unreal's Online Subsystem (OSS) and Steam Online Subsystem into a clean, easy-to-use GameInstance Subsystem (`USFSSMultiplayerSessionsSubsystem`).
+**Straight Forward Steam Sessions** is a lightweight, production-ready, and unopinionated Unreal Engine plugin designed to wrap Unreal's Online Subsystem (OSS) and Steam Online Subsystem into a clean, easy-to-use GameInstance Subsystem (`USFOSMultiplayerSessionsSubsystem`).
 
 Built under the **Straight Forward Solid Systems** philosophy, it provides decoupled, modular building blocks: developers can create 1-click frictionless friend lobbies or build advanced server browsers with arbitrary custom metadata without touching C++.
 
@@ -15,3 +15,9 @@ Built under the **Straight Forward Solid Systems** philosophy, it provides decou
 - 🔄 **Async Event Delegates:** Dynamic multicast delegates for creation, discovery, friend search, joining, and destruction of sessions.
 - ✈️ **Clean Server Travel:** Built-in helper to execute seamless server travel with `?listen` for all connected players.
 - 🛡️ **Zero Bloat & Production Ready:** Cero unnecessary tick, fully event-driven, leak-free RAII memory management, and zero forced workflow restrictions.
+
+---
+
+## 📸 Blueprint API Visual Overview
+
+![SF Steam Online Sessions - Blueprint Nodes Overview](../.gitbook/assets/sf-steam-sessions-blueprint-nodes.png)

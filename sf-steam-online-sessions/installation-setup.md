@@ -19,11 +19,11 @@ Follow these steps to install and configure **Straight Forward Steam Sessions** 
 If installing from a standalone ZIP or repository build:
 
 1. Create a `Plugins/` folder in your project root directory if it does not exist.
-2. Copy the `StraightForwardSteamSessions` folder into `YourProject/Plugins/`:
+2. Copy the `StraightForwardOnlineSessions` folder into `YourProject/Plugins/`:
    ```
    YourProject/
    └── Plugins/
-       └── StraightForwardSteamSessions/
+       └── StraightForwardOnlineSessions/
    ```
 3. Regenerate Visual Studio project files (if using C++) and launch the editor.
 4. Verify the plugin is enabled in **Edit > Plugins**.
@@ -63,7 +63,7 @@ PublicDependencyModuleNames.AddRange(new string[] {
     "CoreUObject",
     "Engine",
     "InputCore",
-    "StraightForwardSteamSessions",
+    "StraightForwardOnlineSessions",
     "OnlineSubsystem",
     "OnlineSubsystemSteam",
     "OnlineSubsystemUtils"
