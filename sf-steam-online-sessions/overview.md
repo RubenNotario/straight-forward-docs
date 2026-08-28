@@ -21,3 +21,7 @@ Built under the **Straight Forward Solid Systems** philosophy, it provides decou
 ## 📸 Blueprint API Visual Overview
 
 ![SF Steam Online Sessions - Blueprint Nodes Overview](../.gitbook/assets/sf-steam-sessions-blueprint-nodes.png)
+
+> [!TIP]
+> **Explore Nodes Directly in Unreal Engine:**  
+> The entire organized Blueprint node graph pictured above is laid out inside the **Level Blueprint** of the included **`HowToUse`** showcase level (`/StraightForwardOnlineSessions/Levels/HowToUse`). You can open it in the editor to inspect, zoom in, and copy-paste nodes directly into your project.

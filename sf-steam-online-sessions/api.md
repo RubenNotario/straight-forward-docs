@@ -4,6 +4,10 @@ All multiplayer functionality is exposed via `USFOSMultiplayerSessionsSubsystem`
 
 ![SF Steam Online Sessions - Blueprint Nodes Overview](../.gitbook/assets/sf-steam-sessions-blueprint-nodes.png)
 
+> [!TIP]
+> **Interactive Graph in Sample Project:**  
+> The complete, high-resolution Blueprint node graph shown above is arranged and ready to explore in the **Level Blueprint** of the **`HowToUse`** sample level (`/StraightForwardOnlineSessions/Levels/HowToUse`). You can open it in the editor to inspect all pins, connections, and copy-paste nodes directly into your own Blueprints.
+
 ---
 
 ## 📦 Data Asset: `USFSteamSessionDataAsset`
