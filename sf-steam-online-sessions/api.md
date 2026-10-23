@@ -27,7 +27,15 @@ A primary data asset to centralize and configure multiplayer project settings, l
 - **`GetGameplayLevelPath(Index)`**: Returns package path of the gameplay level at specified index.
 - **`GetGameplayLevelNames()`**: Returns array of names for all gameplay levels (for ComboBoxes).
 - **`GetGameModeNames()`**: Returns array of names for all configured game modes (for ComboBoxes).
-- **`GetGameplayLevelEntry(Index, OutEntry)`**: Returns the level entry struct.
+- **`GetGameplayLevelEntry(Index, OutEntry)`** *(bool)*: Returns the level entry struct.
+- **`GetGameplayLevelsCount()`** *(int32)*: Number of gameplay levels.
+- **`GetGameModeEntry(Index, OutEntry)`** *(bool)*: Returns the game mode entry struct.
+
+### Entry Structs
+| Struct | Fields |
+| :--- | :--- |
+| `FSFGameplayLevelEntry` | `DisplayName` (`"Level 1"`), `LevelAsset` (soft `UWorld`), `Thumbnail` (`UTexture2D`), `Description` |
+| `FSFGameModeEntry` | `ModeName` (`"Standard"`), `Description` |
 
 ---
 
@@ -61,9 +69,9 @@ Configuration struct for querying Steam sessions.
 ### `CreateSessionFromDataAsset`
 Creates a Steam multiplayer session using the provided Data Asset configuration and travels to `LobbyLevel`.
 - **`SessionConfig`** *(USFSteamSessionDataAsset\*)*: The Data Asset containing map and mode definitions.
-- **`MaxPlayers`** *(int32, default=4)*: Player limit.
-- **`SelectedGameMode`** *(FString, default="Default")*: Selected game mode name (automatically saved to `CustomData["GameMode"]`).
-- **`SelectedGameplayLevelIndex`** *(int32, default=0)*: Selected map index from Data Asset (automatically saved to `CustomData["SelectedLevelIndex"]` and `CustomData["SelectedLevelName"]`).
+- **`MaxPlayers`** *(int32)*: Player limit.
+- **`SelectedGameMode`** *(FString)*: Selected game mode name (automatically saved to `CustomData["GameMode"]`).
+- **`SelectedGameplayLevelIndex`** *(int32)*: Selected map index from Data Asset (automatically saved to `CustomData["SelectedLevelIndex"]` and `CustomData["SelectedLevelName"]`).
 - **`AdditionalCustomData`** *(TMap<FString, FString>, advanced)*: Optional runtime key-value pairs (e.g. Server Name).
 
 ### `StartMatchFromCurrentSession`
@@ -127,7 +135,7 @@ Executes server travel (`?listen`) to switch maps for the server and all connect
 - **`GetAllSessionCustomData(FBlueprintSessionResult)`**: Returns the entire `TMap<FString, FString>` of custom metadata for the session.
 
 ### Steam Profile Helpers
-- **`GetSteamAvatar(APlayerState* PlayerState)`**: Returns a `UTexture2D*` containing the player's Steam profile picture, cached and protected against Garbage Collection.
+- **`GetSteamAvatar(APlayerState* PlayerState)`**: Returns a `UTexture2D*` containing the player's Steam profile picture, cached and protected against Garbage Collection. Returns `null` when the active Online Subsystem is not Steam (e.g. LAN fallback).
 
 ---
 
@@ -153,5 +161,9 @@ Subscribe to these event dispatchers in your Blueprints (using **Assign** or **B
 > 1. The official desktop **Steam Client** must be running and logged in on your machine.
 > 2. You must test via **Play > Standalone Game** (or in packaged builds). Standard PIE (Selected Viewport) runs in a non-Steam emulation environment.
 > 3. If testing multiplayer across 2 PCs using default `AppID 480` (Spacewar), both Steam accounts must be set to the **same Download Region** in Steam Settings (`Settings > Downloads > Download Region`).
+
+> [!NOTE]
+> **LAN Fallback:**
+> When Steam is not running, the engine falls back to the `NULL` Online Subsystem. The plugin detects it and creates / searches **LAN** sessions automatically, so two Standalone instances on the same network can still host and join (Steam-only features such as invites and avatars are unavailable).
 
 

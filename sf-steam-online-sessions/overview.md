@@ -14,7 +14,8 @@ Built under the **Straight Forward Solid Systems** philosophy, it provides decou
 - 🖼️ **Steam Player Avatars (GC-Protected):** Fetch player Steam profile pictures directly into `UTexture2D` widgets for custom lobby menus, cached and safe against Garbage Collection.
 - 🔄 **Async Event Delegates:** Dynamic multicast delegates for creation, discovery, friend search, joining, and destruction of sessions.
 - ✈️ **Clean Server Travel:** Built-in helper to execute seamless server travel with `?listen` for all connected players.
-- 🛡️ **Zero Bloat & Production Ready:** Cero unnecessary tick, fully event-driven, leak-free RAII memory management, and zero forced workflow restrictions.
+- 🏠 **Automatic LAN Fallback:** if the Steam client is not available, the Online Subsystem falls back to `NULL` and sessions are created and searched as LAN matches (useful for local testing).
+- 🛡️ **Zero Bloat & Production Ready:** Zero unnecessary tick, fully event-driven, leak-free RAII memory management, and zero forced workflow restrictions.
 
 ---
 
@@ -25,3 +26,19 @@ Built under the **Straight Forward Solid Systems** philosophy, it provides decou
 > [!TIP]
 > **Explore Nodes Directly in Unreal Engine:**  
 > The entire organized Blueprint node graph pictured above is laid out inside the **Level Blueprint** of the included **`HowToUse`** showcase level (`/StraightForwardOnlineSessions/Levels/HowToUse`). You can open it in the editor to inspect, zoom in, and copy-paste nodes directly into your project.
+
+---
+
+## 📦 Included Example Content
+
+| Asset | Description |
+| :--- | :--- |
+| `Levels/MenuLevel` | Main menu: host (Data Asset flow), server browser and friend sessions. Default map of the sample project. |
+| `Levels/Lobby` | Pre-match lobby with player list, Steam avatars and host-only Start Match. |
+| `Levels/GameplayLevel1` / `GameplayLevel2` | Selectable gameplay maps. |
+| `Levels/HowToUse` | Documentation room (panels, Docs / Contact buttons) and the node graph in its Level Blueprint. |
+| `Bluerpints/Data/SFSession_DataAsset` | Example `USFSteamSessionDataAsset` (lobby, levels, game modes). |
+| `Bluerpints/MainMenu`, `Lobby`, `Gameplay` | Game modes, player controllers and characters for each stage. |
+| `Widgets/` | `WBP_MainMenu`, `WBP_LobbyUI`, `WBP_GameplayUI`, `WBP_SessionItem`, `WBP_UserList`, `WBP_UserItem`, `WBP_UserName`. |
+
+**Supported engine version:** Unreal Engine 5.8.

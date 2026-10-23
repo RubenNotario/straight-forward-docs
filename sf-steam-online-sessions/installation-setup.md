@@ -26,7 +26,8 @@ If installing from a standalone ZIP or repository build:
        └── StraightForwardOnlineSessions/
    ```
 3. Regenerate Visual Studio project files (if using C++) and launch the editor.
-4. Verify the plugin is enabled in **Edit > Plugins**.
+4. Verify the plugin is enabled in **Edit > Plugins > Multiplayer > Straight Forward Steam Sessions**.
+5. Make sure the engine plugins **Online Subsystem**, **Online Subsystem Steam** and **Steam Sockets** are enabled.
 
 ---
 
@@ -69,3 +70,11 @@ PublicDependencyModuleNames.AddRange(new string[] {
     "OnlineSubsystemUtils"
 });
 ```
+
+---
+
+## 🚢 Packaging Checklist
+
+1. Add every level (Menu, Lobby, Gameplay) to **Project Settings > Packaging > List of maps to include in a packaged build**, otherwise `ServerTravel` fails in packaged builds.
+2. Enable **Use Seamless Travel** in your lobby / gameplay Game Modes.
+3. For development with AppID 480, place a `steam_appid.txt` containing `480` next to the packaged executable (`Binaries/Win64/`). Replace `480` with your own Steam App ID (ini and txt) for release.

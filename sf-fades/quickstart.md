@@ -18,3 +18,13 @@ Here is a common scenario: fading out to black before loading a new level, and f
 
 4. **Fade Back In (On Level Loaded):**
    - In the `BeginPlay` of your Level Blueprint or PlayerController, call `Fade In` with `Duration = 1.0`.
+
+---
+
+## 🌈 Material Transition
+
+1. Create a material with **Material Domain = User Interface** and **Blend Mode = Translucent**.
+2. Add a Scalar Parameter named `FadeAmount` and use it to drive **Opacity** (e.g. a left-to-right wipe).
+3. Call `Fade Out With Material (Material, 1.2, true, "FadeAmount")`, then later `Fade In With Material (1.2)`.
+
+> 💡 Open `Levels/HowToUse` in the plugin content to try every example in play mode.

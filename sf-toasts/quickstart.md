@@ -23,4 +23,7 @@ Examples of displaying Toast notifications and modal popups in Blueprint.
    - `WidgetClass`: Select your `WBP_PopupModal`.
    - `Text`: `"Are you sure you want to quit to main menu?"`
    - `bPauseGame`: `true`
-2. The subsystem automatically blurs/darkens the background and freezes game time until closed!
+2. The subsystem darkens the background, pauses the game and gives the mouse to the UI until **Close** is clicked.
+3. To continue your flow afterwards, bind **On Popup Closed** on the returned widget.
+
+> 💡 `Widgets/WBP_ToastMessage` and `Widgets/WBP_PopupModal` are included in the plugin content.

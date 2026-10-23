@@ -45,3 +45,11 @@ Completely removes a timer entry from active memory.
 
 - **`OnTimerFinished(FName TimerName)`**: Broadcasted when a countdown timer reaches 0.
 - **`OnTimerPaused(FName TimerName)`**: Broadcasted when a timer is paused.
+
+---
+
+## 🖥️ `ULevelTimerWidget` (HUD)
+
+Abstract `UUserWidget` base class that refreshes a text block every frame with `GetFormattedTime(TargetTimerName)`.
+- **`TimerText`** *(UTextBlock, BindWidget)*: Required. Add a Text Block named exactly `TimerText` in your Widget Blueprint.
+- **`TargetTimerName`** *(FName, ExposeOnSpawn)*: Name of the timer to display (Default: `"DefaultTimer"`).

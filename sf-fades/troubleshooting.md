@@ -16,4 +16,16 @@ If `bBlockInput` was set to `true` during `FadeOut`, ensure you call `FadeIn` (o
 
 ### ❓ Fade widget is rendered behind other UI elements
 **Solution:**
-The default Z-order for `UScreenFadeWidget` is set very high (e.g. 10,000). If custom UI elements draw over it, ensure their Viewport Z-Order is set lower than 10,000.
+The fade widget is added to the viewport with Z-Order `9999`. If custom UI elements draw over it, ensure their Viewport Z-Order is lower than `9999` (or higher, if they must stay visible during the transition).
+
+---
+
+### ❓ Material fade renders as a solid black screen
+**Solution:**
+Fixed in the current version: the fade image tint is reset to white when a material is assigned, so the material controls color and opacity. If you use a custom `UScreenFadeWidget`, do not tint the `FadeImage` yourself while a material fade is active.
+
+---
+
+### ❓ My material fade covers the screen instantly
+**Solution:**
+The subsystem drives the scalar parameter from `0` to `1`. Make the material **Opacity** depend on it (Material Domain: **User Interface**, Blend Mode: **Translucent**). See `Materials/M_SF_FadeGradient` in the plugin content for a working wipe example.

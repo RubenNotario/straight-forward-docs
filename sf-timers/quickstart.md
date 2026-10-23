@@ -10,10 +10,11 @@ Example implementation of a 60-second challenge countdown with a HUD timer widge
    - On Game/Level Start, get `LevelTimerSubsystem`.
    - Call `StartCountdown(FName("MatchTimer"), 60.0f)`.
 
-2. **Update UMG HUD Text Widget:**
-   - In your HUD Widget's `Tick` or timer event:
-   - Call `Get Level Timer Subsystem` ➔ `Get Formatted Time("MatchTimer")`.
-   - Bind output `FString` directly to your Text Block widget.
+2. **Show it on the HUD (no Blueprint logic):**
+   - Create a Widget Blueprint with parent class `LevelTimerWidget`.
+   - Add a Text Block named exactly `TimerText`.
+   - Set **Target Timer Name** = `MatchTimer` in Class Defaults (or on the `Create Widget` node) and **Add to Viewport**.
+   - *Alternative:* in any widget, bind a Text Block to `Get Formatted Time("MatchTimer")`.
 
 3. **Handle Match Finish:**
    - Bind to `OnTimerFinished`.

@@ -30,3 +30,15 @@ Common issues and solutions when working with Unreal Engine Online Subsystem & S
 **Solution:**
 - Ensure the target `PlayerState` has connected via Steam (has a valid `UniqueNetId`).
 - Avatars are fetched asynchronously from Steam API servers; the subsystem automatically caches loaded textures to protect against Garbage Collector destruction.
+
+---
+
+### ❓ `GetSteamAvatar` always returns null in local tests
+**Solution:**
+If the Steam client is not running, the project falls back to the `NULL` (LAN) Online Subsystem and avatars are not available. Start Steam before launching **Standalone Game**.
+
+---
+
+### ❓ Travel to the gameplay map fails only in packaged builds
+**Solution:**
+Add all session maps to **Project Settings > Packaging > List of maps to include in a packaged build**.
