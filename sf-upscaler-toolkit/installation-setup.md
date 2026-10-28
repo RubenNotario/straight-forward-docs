@@ -9,7 +9,7 @@ Follow these steps to install **SFUpscaler** in your Unreal Engine project.
 1. Acquire the plugin on **Fab** (Epic Games Launcher).
 2. Click **Install to Engine** and select your desired Unreal Engine version.
 3. Open your project and navigate to **Edit > Plugins**.
-4. Search for **SFUpscaler** and check **Enabled**.
+4. Search for **Straight Forward Upscaler Toolkit** and check **Enabled**.
 5. Restart the editor when prompted.
 
 ---
@@ -44,4 +44,4 @@ Add this to `Config/DefaultEngine.ini`, otherwise every call is ignored (a warni
 GameUserSettingsClassName=/Script/SFUpscaler.SFUpscalerSettings
 ```
 
-Enable the **NVIDIA DLSS** and / or **AMD FSR** plugins if you want to offer them. TSR works without extra plugins.
+Enable the **NVIDIA DLSS** (and its Streamline plugins for Frame Generation and Reflex) and / or the **AMD FSR Upscaling** plugin 4.x (plus **Radeon Anti-Lag 2** for FSR Frame Generation) if you want to offer them. TSR and the rest of the settings menu work without extra plugins.
