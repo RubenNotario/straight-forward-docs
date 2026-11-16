@@ -6,6 +6,7 @@
 ## SF UPSCALER TOOLKIT
 * [Overview](sf-upscaler-toolkit/overview.md)
 * [Installation & Setup](sf-upscaler-toolkit/installation-setup.md)
+* [Configuration Profile](sf-upscaler-toolkit/configuration-profile.md)
 * [Components / Blueprints / C++ API](sf-upscaler-toolkit/api.md)
 * [Quickstart Example](sf-upscaler-toolkit/quickstart.md)
 * [Troubleshooting](sf-upscaler-toolkit/troubleshooting.md)

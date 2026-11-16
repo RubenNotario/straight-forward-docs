@@ -4,11 +4,12 @@ A complete graphics settings screen in a few minutes.
 
 ---
 
-1. Add the ini line from **Installation & Setup**.
+1. Add the ini line from **Installation & Setup**. *(Optional)* Install the free NVIDIA DLSS / AMD FSR plugins from Fab to offer them; Epic TSR works without them.
 2. Duplicate `Widgets/UI/WBP_SFDemoMenu` and `WBP_SFOptionRow` into your project and restyle them (or create your own children of `SFGraphicsSettingsWidget` / `SFOptionRowWidget`).
 3. Open the duplicated menu and set **Row Class** to your row widget.
 4. Create the menu from your pause menu or main menu (`Create Widget` + `Add to Viewport`) and show the mouse cursor.
 5. Done: every row applies and saves its setting. Bind `On Setting Changed` if your UI needs to react.
+6. *(Optional)* Duplicate `Settings/DA_SFUpscaler_Default`, tune it and select it in **Project Settings > Plugins > SF Upscaler Toolkit > Profile**: first-launch upscaler, hidden rows, frame rate limits, Lumen and ray tracing options. See [Configuration Profile](configuration-profile.md).
 
 > 💡 Prefer your own UI? Call `Set And Apply Upscaler Mode`, `Get Supported Modes` and the rest of `USFUpscalerLibrary` directly.
 

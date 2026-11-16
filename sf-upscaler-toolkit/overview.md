@@ -16,7 +16,9 @@
 - 🔴 **AMD FSR 4 / FSR 3:** built on the official AMD FSR Upscaling plugin 4.x. FSR 4 (ML) is used on Radeon RX 7000 / 9000 and FSR 3 on any other GPU; FSR Frame Generation turns on Radeon Anti-Lag 2 when its plugin is installed.
 - 📊 **Performance Overlay:** FPS and frame times (game, render, GPU) in their own viewport layer: they stay on screen while the menu is hidden. With Frame Generation it shows the frames presented on screen (what the NVIDIA / AMD overlays count) and the rendered ones below.
 - 💾 **Persistent Settings:** `USFUpscalerSettings` extends Game User Settings, so every choice is saved with the rest of your options.
-- 🔗 **No Hard Dependency:** DLSS is driven through NVIDIA's own Blueprint libraries via reflection. The plugin compiles and runs without them; unsupported rows are simply disabled.
+- 🧩 **Configuration Profile:** one Data Asset for first-launch defaults, TSR / FSR tuning, Lumen reflections, ray tracing, menu layout and extra console variables, picked in Project Settings and cooked automatically. See [Configuration Profile](configuration-profile.md).
+- 🎚️ **Settings That Stick:** every option is applied with `SetByCode` priority, so values in `DefaultEngine.ini` or device profiles no longer override the player's choice.
+- 🔗 **No Hard Dependency:** the NVIDIA DLSS and AMD FSR plugins are optional (free on Fab, not included) and detected at runtime. DLSS is driven through NVIDIA's own Blueprint libraries via reflection; the plugin compiles and runs without them and unsupported rows are simply disabled.
 
 ---
 
@@ -30,5 +32,8 @@
 | `Widgets/UI/WBP_SFDemoMenu` | The settings screen: child of `SFGraphicsSettingsWidget`, SF style. |
 | `Widgets/UI/WBP_SFOptionRow` | One `Label  < Value >` row: child of `SFOptionRowWidget`. |
 | `Blueprints/HowToUse/BP_SFDemoMenuController` | Creates the menu and toggles it with TAB, pauses with P. |
+| `Settings/DA_SFUpscaler_Default` | Default Configuration Profile (all overrides off). |
 
-**Supported engine version:** Unreal Engine 5.8.
+**Supported engine version:** Unreal Engine 5.8. **Platform:** Windows (Win64).
+
+> Not affiliated with NVIDIA or AMD. DLSS and FSR are trademarks of their respective owners.

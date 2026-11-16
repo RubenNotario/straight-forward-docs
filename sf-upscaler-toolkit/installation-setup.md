@@ -44,4 +44,23 @@ Add this to `Config/DefaultEngine.ini`, otherwise every call is ignored (a warni
 GameUserSettingsClassName=/Script/SFUpscaler.SFUpscalerSettings
 ```
 
-Enable the **NVIDIA DLSS** (and its Streamline plugins for Frame Generation and Reflex) and / or the **AMD FSR Upscaling** plugin 4.x (plus **Radeon Anti-Lag 2** for FSR Frame Generation) if you want to offer them. TSR and the rest of the settings menu work without extra plugins.
+---
+
+## 🔌 Optional: NVIDIA DLSS and AMD FSR
+
+Epic TSR and the whole settings menu work out of the box. DLSS and FSR need their own **free plugins from Fab**, which are **not included**:
+
+- **NVIDIA DLSS** (and its Streamline plugins for Frame Generation and Reflex).
+- **AMD FSR Upscaling** 4.x (plus **Radeon Anti-Lag 2** for FSR Frame Generation).
+
+Install them, enable them in **Edit > Plugins** and restart the editor. If a plugin is missing, its upscaler simply does not appear in the menu: nothing breaks.
+
+---
+
+## 🧩 Optional: Configuration Profile
+
+To change first-launch defaults, renderer tuning or the menu layout, pick a profile in **Project Settings > Plugins > SF Upscaler Toolkit > Profile** (empty = `DA_SFUpscaler_Default`). See [Configuration Profile](configuration-profile.md).
+
+---
+
+**Platform:** Windows (Win64), Unreal Engine 5.8.
