@@ -75,6 +75,9 @@ PublicDependencyModuleNames.AddRange(new string[] {
 
 ## 🚢 Packaging Checklist
 
+> [!NOTE]
+> **Platform:** the runtime module is restricted to **Win64** (`PlatformAllowList`), because it links against Steamworks.
+
 1. Add every level (Menu, Lobby, Gameplay) to **Project Settings > Packaging > List of maps to include in a packaged build**, otherwise `ServerTravel` fails in packaged builds.
 2. Enable **Use Seamless Travel** in your lobby / gameplay Game Modes.
-3. For development with AppID 480, place a `steam_appid.txt` containing `480` next to the packaged executable (`Binaries/Win64/`). Replace `480` with your own Steam App ID (ini and txt) for release.
+3. The **Steam client must be running** when the packaged game starts. For development with AppID 480 (Spacewar), place a `steam_appid.txt` containing `480` next to the packaged executable (`Binaries/Win64/`). Replace `480` with your own Steam App ID (ini and txt) for release. Without Steam, the game falls back to LAN sessions.
