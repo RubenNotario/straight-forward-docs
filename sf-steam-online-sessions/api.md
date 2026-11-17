@@ -116,8 +116,14 @@ Opens the native Steam Overlay friend invitation modal (1-click invitation).
 Destroys the active multiplayer session and cleanly unbinds networking handles.
 
 ### `ChangeSessionLevel`
-Executes server travel (`?listen`) to switch maps for the server and all connected clients.
+Executes server travel (`?listen`) to switch maps for the server and all connected clients. It only acts on the server (listen host).
 - **`MapPath`** *(FString)*: Path to the target level.
+
+**Travel indicator pattern (demo):** nothing is shown while the map loads, so the sample tells every player first:
+1. On the server, call `BeginTravelFeedback` on the Game Mode (`GM_Gameplay` / `GM_Lobby`). It sets a `bTravelInProgress` flag, so two players stepping on a trigger at once only notify once.
+2. `BeginTravelFeedback` sets the replicated `bTravelling` variable (RepNotify) on every Player Controller. `OnRep_bTravelling` runs on each client and on the host and calls `ShowTravelling` on its widget: amber spinner + "Changing level...", pause menu closed.
+3. `Delay` ~0.3 s, so the value replicates and the spinner is drawn.
+4. Call `ChangeSessionLevel` (or `StartMatchFromCurrentSession` from the lobby).
 
 ---
 

@@ -13,7 +13,7 @@ The most organized and extensible workflow for production games with multiple ma
 2. Name it `DA_SteamSessionConfig`.
 3. In its Details panel, configure:
    - **Project ID**: Your game's unique ID (e.g. `"MyGameV1"`).
-   - **Lobby Level**: Drag-and-drop your pre-game gathering map (e.g. `LobbyLevel`).
+   - **Lobby Level**: Drag-and-drop your pre-game gathering map (e.g. `Lobby`).
    - **Gameplay Levels**: Add your playable maps with display names and thumbnails.
    - **Game Modes**: Add mode names (e.g. `"Cooperative"`, `"Deathmatch"`).
 
@@ -31,8 +31,11 @@ The most organized and extensible workflow for production games with multiple ma
    - All players in the lobby will seamlessly travel together to the gameplay map.
 
 ### 4. Leaving the Match & Clean Teardown
-1. On the "Exit Session" button (in Lobby or Pause Menu), call `Get SFOSMultiplayerSessionsSubsystem` ➔ `DestroySession`.
-2. Bind to `OnDestroySessionCompleteEvent` and call `Open Level` to return the player safely back to your `MenuLevel`.
+1. On the **Main Menu** button of your pause menu (or "Exit Session" in the Lobby), call `Get SFOSMultiplayerSessionsSubsystem` ➔ `DestroySession`.
+2. Bind to `OnDestroySessionCompleteEvent` and call `Open Level` to return the player to your main menu map (`Menu` in the demo). Open the level whatever `bWasSuccessful` says: when there is no session (e.g. a map opened directly in PIE) the event fires with `false`, and the player should still go back.
+
+> [!TIP]
+> **Travel indicator:** server travel takes a few seconds. The demo tells every player before calling `ChangeSessionLevel` / `StartMatchFromCurrentSession`; see the pattern in [ChangeSessionLevel](api.md#changesessionlevel).
 
 ---
 
